@@ -21,3 +21,11 @@ ansible redhat -b -m yum -a 'name=vim state=absent'
 # definir variable desde el comando.
 ansible-playbook infrastructure.yml --extra-var "var_hosts=redhat var_user=ansible var_pkg=vim"
 
+ansible redhat -m setup
+ansible redhat -m setup -a "filter=*address*"
+
+#create a directory redhat with information
+ansible redhat -m setup --tree redhat
+
+# create 3 directories for the 3 groups of servers
+ansible all -m setup --tree all
