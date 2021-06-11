@@ -18,3 +18,6 @@ ansible debian -become -m apt -a "name=nginx state=absent"
 ansible-playbook infrastructure.yml 
 ansible redhat -b -m yum -a 'name=vim state=absent'
 
+# definir variable desde el comando.
+ansible-playbook infrastructure.yml --extra-var "var_hosts=redhat var_user=ansible var_pkg=vim"
+

@@ -5,10 +5,6 @@
   become_method: sudo
   gather_facts: yes
   connection: ssh
-  vars:
-          var_hosts: redhat
-          var_user: ansible
-          var_pkg: vim
   tasks:
   - name: Install package define by vars section
     yum:
