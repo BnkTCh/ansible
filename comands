@@ -15,4 +15,6 @@ ansible all --become -m user -a "name=newansible state=absent"
 ansible-playbook infrastructure.yml
 ansible-playbook infrastructure-2.yml
 ansible debian -become -m apt -a "name=nginx state=absent" 
+ansible-playbook infrastructure.yml 
+ansible redhat -b -m yum -a 'name=vim state=absent'
 
