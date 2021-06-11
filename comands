@@ -1,0 +1,18 @@
+cat /etc/ansible/hosts
+ansible debian -m ping
+sudo vim /etc/ansible/hosts
+ansible all -m ping
+ansible all -a 'ls -lah ~'
+ansible all -a 'cat /etc/passwd'
+ansible redhat -a 'tail -5 /var/log/messages'
+ansible redhat -s -a 'tail -5 /var/log/messages'
+echo 'I am ready!' >> /tmp/ready.txt
+ansible all -m copy -a "src=/tmp/ready.txt dest=/tmp/ready_copy.txt"
+ansible redhat --become -m yum -a "name=htop state=present"
+ansible redhat --become -m yum -a "name=htop state=absent"
+ansible all --become -m user -a "name=newansible state=present"
+ansible all --become -m user -a "name=newansible state=absent"
+ansible-playbook infrastructure.yml
+ansible-playbook infrastructure-2.yml
+ansible debian -become -m apt -a "name=nginx state=absent" 
+
