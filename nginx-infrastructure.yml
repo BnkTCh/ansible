@@ -1,4 +1,4 @@
---- # Infrastructure demo YAML 2nd
+--- # Infrastructure demo YAML 2nd - install nginx on debian
 - hosts: debian
   remote_user: ansible
   become: yes

@@ -1,4 +1,4 @@
---- # Infrastructure demo YAML
+--- # Infrastructure demo YAML - install httpd on
 - hosts: redhat
   remote_user: ansible
   become: yes
