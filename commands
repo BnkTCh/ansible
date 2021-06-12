@@ -29,3 +29,4 @@ ansible redhat -m setup --tree redhat
 
 # create 3 directories for the 3 groups of servers
 ansible all -m setup --tree all
+ansible all -m ping -i inventory

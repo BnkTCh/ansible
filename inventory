@@ -1,2 +1,5 @@
+[ubuntu]
 3.238.58.121 ansible=ansible
+
+[redhat]
 3.238.41.238 ansible=ansible
