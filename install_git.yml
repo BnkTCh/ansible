@@ -1,0 +1,15 @@
+---
+
+- name: install git on Ubuntu
+  hosts: ubuntu
+  become: True
+  tasks:
+    - name: install git
+      apt: name=git
+
+- name: install git on Fedora
+  hosts: redhat
+  become: True
+  tasks:
+    - name: install git
+      yum: name=git 
