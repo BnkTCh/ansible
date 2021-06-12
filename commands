@@ -35,3 +35,5 @@ ansible ubuntu -m apt -a "name=git" -i inventory
 ansible redhat -b -m yum -a "name=git" -i inventory
 #bash command
 ansible all -m command -a "whoami" -i inventory
+#copy file
+ansible all -b -m copy -a src= inventory dest=/home/ansible/Desktop -i inventory
