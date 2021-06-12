@@ -39,3 +39,7 @@ ansible all -m command -a "whoami" -i inventory
 ansible all -b -m copy -a "src=inventory dest=~/Desktop" -i inventory
 #how to run playbook
 ansible-playbook install_git.yml -i inventory
+#to get all the facts from all the nodes in the inventory
+ansible all -m setup
+#You can ignore the facts
+gather_facts: False
