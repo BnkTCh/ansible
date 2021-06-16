@@ -6,13 +6,18 @@
   connection: ssh
   gather_facts: yes
   tasks:
-  - name: Install NginX service on all instances that belong to debian group
+  - name: Install NginX service
     apt:
             name: nginx
             state: latest
     notify:
     - enable and restart nginx service
     register: output
+  - name: Install git
+    apt:
+            name: git
+            state: latest
+  
   - debug: var=output
   handlers:
   - name: enable and restart nginx service
