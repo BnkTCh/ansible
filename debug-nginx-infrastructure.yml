@@ -6,7 +6,11 @@
   connection: ssh
   gather_facts: yes
   tasks:
+<<<<<<< HEAD
   - name: Install NginX service on all instances that belong to debian group
+=======
+  - name: Install nginx service with latest service
+>>>>>>> 57101c2... modifying debug playbook to force conflicts
     apt:
             name: nginx
             state: latest
