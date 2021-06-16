@@ -29,6 +29,7 @@ ansible redhat -m setup --tree redhat
 
 # create 3 directories for the 3 groups of servers
 ansible all -m setup --tree all
+
 ansible all -m ping -i inventory
 #install a package
 ansible ubuntu -m apt -a "name=git" -i inventory
