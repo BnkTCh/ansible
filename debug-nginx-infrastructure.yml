@@ -6,7 +6,13 @@
   connection: ssh
   gather_facts: yes
   tasks:
+<<<<<<< HEAD
   - name: Install NginX service ok
+=======
+<<<<<<< HEAD
+  - name: Install NginX service on all instances that belong to debian group
+=======
+  - name: Install nginx service with latest service
     apt:
             name: nginx
             state: latest
