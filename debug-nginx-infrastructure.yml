@@ -1,6 +1,6 @@
 --- # Infrastructure demo YAML 2nd - install nginx on debian
 - hosts: debian
-  remote_user: ansibleprueba
+  remote_user: ansible
   become: yes
   become_method: sudo
   connection: ssh
