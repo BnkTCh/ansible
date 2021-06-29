@@ -7,7 +7,7 @@
   gather_facts: yes
   tasks:
   - name: Install NginX service
-    apt:
+    yum:
             name: nginx
             state: latest
     notify:
@@ -19,11 +19,11 @@
             enabled: yes
             state: restarted
   - name: Install Git
-    apt:
+    yum:
             name: git
             state: latest
             update_cache: yes
   - name: Install python
-    apt:
+    yum:
             name: pip
             state: latest
