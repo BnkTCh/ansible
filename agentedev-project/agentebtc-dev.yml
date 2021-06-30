@@ -6,6 +6,19 @@
   connection: ssh
   gather_facts: yes
   tasks:
+  - name: Install Git
+    yum:
+            name: git
+            state: latest
+            update_cache: yes
+  - name: Install python
+    yum:
+            name: pip
+            state: latest
+  - name: Install EPEL repository
+    yum:
+            name: epel-release
+            state: latest
   - name: Install NginX service
     yum:
             name: nginx
@@ -18,12 +31,3 @@
             name: nginx
             enabled: yes
             state: restarted
-  - name: Install Git
-    yum:
-            name: git
-            state: latest
-            update_cache: yes
-  - name: Install python
-    yum:
-            name: pip
-            state: latest
