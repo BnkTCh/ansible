@@ -1,6 +1,6 @@
 web:
   hosts:
-    54.146.93.26
+    54.243.6.196
   vars:
     domain: helloworld.com
     ansible_user: ansible
