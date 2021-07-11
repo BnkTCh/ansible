@@ -1,6 +1,0 @@
-[amazon]
-3.216.29.238
-
-vars:
-    domain: helloworld.com
-    ansible_user: ansible
