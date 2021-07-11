@@ -1,8 +1,8 @@
 web:
   hosts:
-    54.243.6.196
+    3.236.198.231
   vars:
-    domain: helloworld.com
+    domain: hellobianca.com
     ansible_user: ansible
     ansible_sudo_pass: bianca123
   
