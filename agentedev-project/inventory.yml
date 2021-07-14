@@ -1,6 +1,6 @@
 web:
   hosts:
-    44.192.110.97
+    3.228.5.57
   vars:
     domain: hellobianca.com
     ansible_user: ansible

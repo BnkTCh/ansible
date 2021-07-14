@@ -64,7 +64,22 @@
     apt:
             name: vim
             state: latest
+
+  - name: Install Packages
+    apt: name={{ item }} update_cache=yes state=latest
+    with_items:
+      - build-essential
+      - npm
+      - mcrypt
+      - curl
+      - nodejs
  
+  - name: Install pm2
+    npm:
+            name: pm2
+            global: yes
+            production: yes
+
   handlers:
     - name: restart nginx
       service:
