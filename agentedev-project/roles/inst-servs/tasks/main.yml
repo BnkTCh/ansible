@@ -1,58 +1,10 @@
 --- # agentedev-project/roles/tasks/main.yml
-#- name: "apt-get update"
-#    apt:
-#      update_cache: yes
-#      cache_valid_time: 3600
-#
 
-  - name: "create www directory"
-    file:
-      path: /var/www/{{ domain }}
-      state: directory
-      mode: '0775'
-      owner: "{{ ansible_user }}"
-      group: "{{ ansible_user }}"
+  - name: install apt
+    import_tasks: ins-apt.yml
 
-  - name: delete default nginx site
-    file:
-      path: /etc/nginx/sites-enabled/default
-      state: absent
-    notify: restart nginx
+  - name: install npm
+    import_tasks: ins-npm.yml
 
-  - name: copy nginx site.conf
-    template:
-      src: site.conf.j2
-      dest: /etc/nginx/sites-enabled/{{ domain }}
-      owner: root
-      group: root
-      mode: '0644'
-    notify: restart nginx
-
-  - name: "sync website"
-    synchronize:
-      src: site/
-      dest: /var/www/{{ domain }}
-      archive: no
-      checksum: yes
-      recursive: yes
-      delete: yes
-    become: no
-
-  - name: Install Packages
-    apt: name={{ item }} update_cache=yes state=latest
-    with_items:
-      - nginx
-      - git
-      - pip
-      - vim
-      - build-essential
-      - npm
-      - mcrypt
-      - curl
-      - nodejs
- 
-  - name: Install pm2
-    npm:
-            name: pm2
-            global: yes
-            production: yes
+  - name: install web server
+    import_tasks: web-srv.yml
