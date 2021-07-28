@@ -4,11 +4,6 @@
 #      update_cache: yes
 #      cache_valid_time: 3600
 #
-  - name: "install nginx"
-    apt:
-      name: ['nginx']
-      state: latest
-      update_cache: yes
 
   - name: "create www directory"
     file:
@@ -43,25 +38,13 @@
       delete: yes
     become: no
 
-  - name: Install Git
-    apt:
-            name: git
-            state: latest
-            update_cache: yes
-
-  - name: Install python
-    apt:
-            name: pip
-            state: latest
-
-  - name: Install vim
-    apt:
-            name: vim
-            state: latest
-
   - name: Install Packages
     apt: name={{ item }} update_cache=yes state=latest
     with_items:
+      - nginx
+      - git
+      - pip
+      - vim
       - build-essential
       - npm
       - mcrypt
