@@ -1,8 +1,5 @@
 web:
   hosts:
-    3.239.186.120
+    34.200.218.137
   vars:
-    domain: hellobianca.com
     ansible_user: ansible
-    ansible_sudo_pass: bianca123
-  

@@ -1,3 +1,16 @@
+--- # agentedev-project/roles/tasks/main.yml
+- name: Install Packages
+  apt: 
+    name: "{{ binaries_install }}" 
+    update_cache: yes 
+    state: latest
+
+- name: Install pm2
+  npm: 
+    name: pm2 
+    global: yes 
+    production: yes
+
 - name: "create www directory"
   file:
     path: /var/www/{{ domain }}

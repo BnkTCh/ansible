@@ -1,4 +1,4 @@
---- # dev infrastructure clone - agentebtc
+--- # dev infrastructure clone
 - hosts: all
   #remote_user: ansible
   become: yes
@@ -6,10 +6,6 @@
   connection: ssh
   gather_facts: yes
   roles:
-  - { role: inst-servs }
-  tasks:
-  handlers:
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted
+  - { role: setup-servers }
+  #tasks:
+  #handlers:

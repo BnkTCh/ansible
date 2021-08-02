@@ -1,0 +1,14 @@
+binaries_install:
+    - nginx
+    - git
+    - pip
+    - vim
+    - build-essential
+    - npm
+    - mcrypt
+    - curl
+    - nodejs
+domain: hellobianca.com
+#ansible_user: ansible
+#configurar usuario sin passwd /etc/sudoers  ansible ALL=(ALL) NOPASSWD: ALL
+#ansible_sudo_pass: bianca123
